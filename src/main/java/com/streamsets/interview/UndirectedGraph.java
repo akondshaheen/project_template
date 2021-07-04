@@ -7,17 +7,17 @@ public class UndirectedGraph {
 
   public UndirectedGraph(int totalVertices) {
     encapGraph.setTotalVertices(totalVertices);
-    encapGraph.setArrayListOfAdj(new ArrayList<ArrayList<Integer>>());
-    encapGraph.setVisited(new ArrayList<Integer>());
+    encapGraph.setArrayListOfAdj(new ArrayList<>());
+    encapGraph.setVisited(new ArrayList<>());
 
     for (int i = 0; i < totalVertices; i++) {
       encapGraph.getVisited().add(-1);
-      encapGraph.getArrayListOfAdj().add(i, new ArrayList<Integer>());
+      encapGraph.getArrayListOfAdj().add(i, new ArrayList<>());
     }
   }
 
   /**
-   * + ADD ALL THE EDGES
+   * ADD ALL THE EDGES
    *
    * @param source vertex
    * @param destination vertex
@@ -43,7 +43,9 @@ public class UndirectedGraph {
     }
   }
 
-  /** Get all the linked vertices */
+  /***
+   * Get all the linked vertices
+   */
   public void getLinkedNodes() {
     for (int i = 0; i < encapGraph.getTotalVertices(); i++) {
       if (encapGraph.getVisited().get(i) == -1) {
